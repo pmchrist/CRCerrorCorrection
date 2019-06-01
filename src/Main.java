@@ -5,7 +5,7 @@ class Main {
 
     public static void main(String[] args) {
 
-        int messageNumber = 10000;
+        int messageNumber = 10000000;
         int errorsCreated = 0;
         int errorsFound = 0;
 
@@ -47,12 +47,13 @@ class Main {
                         codedMessage[i] = 0;
                     }
                 }
-                if (containsError) errorsCreated++;
             }
+            if (containsError) errorsCreated++;
 
             //Checking Error
             if (!arithmetic.checkMessage(codedMessage, p)) errorsFound++;
         }
+
         //Show statistics
         System.out.println("% of messages with error: " + (errorsCreated/(double)messageNumber)*100);
         System.out.println("% of messages with error that was found: " + (errorsFound/(double)errorsCreated)*100);
